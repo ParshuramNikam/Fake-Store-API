@@ -1,0 +1,131 @@
+@import url("./styles.css");
+
+body {
+	overflow-x: hidden;
+}
+
+/* -------- Height (100vh - NavBar height) ---------- */
+.min-height-home-screen {
+	min-height: calc(100vh - 4rem);
+}
+
+/* -------------- gradient-banner ----------------- */
+#gradient-banner {
+	background-color: #7f53ac;
+	background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+}
+
+/* -------------- banner-h1-lineHeight ------------ */
+#banner-h1-lineHeight {
+	line-height: 4.5rem;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 800px) {
+	#banner-h1-lineHeight {
+		line-height: normal;
+	}
+}
+
+/* -------- Smooth scrolling ---------- */
+html {
+	scroll-behavior: smooth;
+}
+
+/* ------- Scrollbar Styling  --------- */
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #ebebeb;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #233fdf;
+}
+
+.loader {
+	position: relative;
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	animation: around 5.4s infinite;
+}
+
+@keyframes around {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.loader::after,
+.loader::before {
+	content: "";
+	background: transparent;
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border-width: 2px;
+	border-color: #fff #fff transparent transparent;
+	border-style: solid;
+	border-radius: 20px;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+	animation: around 0.7s ease-in-out infinite;
+}
+
+.loader::after {
+	animation: around 0.7s ease-in-out 0.1s infinite;
+	background: transparent;
+}
+
+/*======================
+    	404 page
+	=======================*/
+
+.page_404 {
+	padding: 40px 0;
+	background: #fff;
+	font-family: "Arvo", serif;
+}
+
+.page_404 img {
+	width: 100%;
+}
+
+.four_zero_four_bg {
+	background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+	height: 400px;
+	background-position: center;
+}
+
+.four_zero_four_bg h1 {
+	font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+	font-size: 80px;
+}
+
+.link_404 {
+	color: #fff !important;
+	padding: 10px 20px;
+	background: #39ac31;
+	margin: 20px 0;
+	display: inline-block;
+}
+
+.contant_box_404 {
+	margin-top: -50px;
+}
