@@ -107,7 +107,7 @@ const register = () => {
                                 </div>
                             </div>
                             {
-                                <button className={`mb-5 bg-indigo-500 text-gray-100 py-3 px-5 flex items-center bg-blue-500 realtive hover:bg-blue-600 focus:ring text-white uppercase text-sm font-semibold px-4 py-2 rounded ${disableSignup ? "cursor-not-allowed" : ""}`}
+                                <button className={`mb-5 flex items-center bg-blue-500 realtive hover:bg-blue-600 focus:ring text-white uppercase text-sm font-semibold px-4 py-2 rounded ${disableSignup ? "cursor-not-allowed" : ""}`}
                                     onClick={(e) => { e.preventDefault(); signupHandler() }}
                                     disabled={disableSignup ? true : false}
                                 >Sign Up
