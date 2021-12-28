@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	addProduct: {
 		reqBody: {
 			id: "PN0123",

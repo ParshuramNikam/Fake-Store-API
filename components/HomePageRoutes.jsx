@@ -72,7 +72,7 @@ const HomePageRoutes = () => {
             <div className=" w-max text-white py-2 px-6 mb-5 bg-indigo-500 rounded shadow cursor-pointer hover:bg-indigo-600">
                 <div>
                     <Link href="/docs">
-                        <a className=" text-xs font-medium text-lg">
+                        <a className="font-medium text-lg">
                             View Details on Docs.
                         </a>
                     </Link>

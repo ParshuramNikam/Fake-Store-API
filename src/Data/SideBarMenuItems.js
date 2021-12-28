@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	productsMenu: [
 		{
 			title: "Get all products",

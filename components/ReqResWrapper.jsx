@@ -81,7 +81,7 @@ const ReqResWrapper = ({ heading, endpoint, id, note, impNote, reqOptions, cutOu
                 }
                 <div>
                     {
-                        <button className="flex items-center w-max text-white py-2 px-6 mb-5 bg-indigo-500 rounded shadow cursor-pointer hover:bg-indigo-600 hover:text-gray-100  text-xs font-medium text-lg"
+                        <button className="flex items-center w-max text-white py-2 px-6 mb-5 bg-indigo-500 rounded shadow cursor-pointer hover:bg-indigo-600 hover:text-gray-100 font-medium text-lg"
                             onClick={() => outputHandler()}
                         >
                             {btnText}

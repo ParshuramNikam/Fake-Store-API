@@ -25,7 +25,7 @@ const SideBar = () => {
             <ul className="mt-10">
                 <li>
                     <h3 className="text-xl mt-3 mb-6 lg:text-2xl">
-                        <Link href="#products"><a>Cart</a></Link>
+                        <Link href="#cart"><a>Cart</a></Link>
                     </h3>
                 </li>
                 {

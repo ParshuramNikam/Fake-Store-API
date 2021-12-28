@@ -89,7 +89,7 @@ const Dashboard = () => {
 	};
 
 	const cardDetailsItem = (title, value) => {
-		return <> <div className="w-full m-2 h-36 my-3 border-b-4 border-indigo-600 m-auto text-center flex flex-col item-center lg:items-center justify-center bg-white rounded shadow-lg p-8 md:mx-3">
+		return <> <div className="w-full m-2 h-36 my-3 border-b-4 border-indigo-600 text-center flex flex-col item-center lg:items-center justify-center bg-white rounded shadow-lg p-8 md:mx-3">
 			<div className="flex lg:flex-wrap gap-5 md:gap-10 items-center justify-center">
 				<div className="text-indigo-600">
 					{
@@ -175,7 +175,7 @@ const Dashboard = () => {
 
 						{
 							onlyUserAddedProducts.length > 0 && <>
-								<div className="mt-7 mx-2 text-center lg:mx-4 mx-1 font-semibold text-indigo-500 text-lg md:text-xl">Your Added Products</div>
+								<div className="mt-7 mx-2 text-center lg:mx-4 font-semibold text-indigo-500 text-lg md:text-xl">Your Added Products</div>
 								<div className="overflow-auto mb-7">
 									<div className="mx-1">
 										<table className="mx-auto rounded shadow-lg rounded-t-2xl mt-2">
@@ -207,7 +207,7 @@ const Dashboard = () => {
 				{
 					cartDetails.cartProducts && cartDetails.cartProducts.length > 0
 						? <>
-							<div className="mt-10 mx-2 lg:mx-4 text-center mx-1 font-semibold text-indigo-600 text-lg md:text-xl">Products in your Cart</div>
+							<div className="mt-10 lg:mx-4 text-center mx-1 font-semibold text-indigo-600 text-lg md:text-xl">Products in your Cart</div>
 							<div className="overflow-auto mb-7">
 								<div className="mx-1">
 									<table className="mx-auto rounded shadow rounded-t-2xl mt-2">
