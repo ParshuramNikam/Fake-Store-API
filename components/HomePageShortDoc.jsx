@@ -30,7 +30,7 @@ const HomePageShortDoc = () => {
     return (
         <>
             <div className="text-lg">
-                <span className="text-gray-600 font-semibold">{'➜'}</span>
+                <span className="text-gray-600 font-semibold">{'➜'} </span>
                 Example: Get a single product by ID
             </div>
             <ReqResWrapper heading={reqData.heading} endpoint={reqData.endpoint} reqOptions={reqData.reqOptions} output={reqData.output} />
