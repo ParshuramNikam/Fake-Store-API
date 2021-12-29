@@ -3,20 +3,17 @@
   "scripts": {
     "dev": "nodemon server.js",
     "build": "next build",
-    "start": "node server.js",
-    "tailwindcss": "postcss styles/tailwind.css -o styles/tailwind.css",
-    "tailwindcss:prod": "set NODE_ENV=production && postcss styles/tailwind.css -o styles/tailwind.css",
-    "heroku-postbuild": "npm install && npm run tailwindcss:prod && npm run build && npm run start"
-  }, 
+    "build:tailwindcss": "npx tailwindcss -i ./styles/tailwind.css -o ./styles/tailwind.css --watch",
+    "heroku-postbuild": "npm install && npm run build",
+    "start": "node server.js"
+  },
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^4.1.3",
     "@headlessui/react": "^1.4.2",
     "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
-    "cssnano": "^5.0.14",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "js-cookie": "^3.0.1",
@@ -25,16 +22,11 @@
     "next": "latest",
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
-    "postcss-cli": "^9.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-json-pretty": "^2.2.0",
     "react-spinners": "^0.11.0",
-    "react-toastify": "^8.1.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.5",
+    "react-toastify": "^8.1.0",
     "tailwindcss": "^3.0.8"
   }
 }
