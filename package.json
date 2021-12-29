@@ -1,5 +1,8 @@
 {
-  "private": true,
+  "name": "FakeStoreAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
     "build": "next build",
@@ -7,6 +10,11 @@
     "heroku-postbuild": "npm install && npm run build",
     "start": "node server.js"
   },
+  "engines": {
+    "node": "14.16.1"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@headlessui/react": "^1.4.2",
     "axios": "^0.24.0",
