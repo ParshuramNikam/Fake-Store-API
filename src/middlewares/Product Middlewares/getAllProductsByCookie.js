@@ -12,7 +12,7 @@ const getAllProductsByCookie = async (req,res,next) => {
             console.log(decodedToken);
 
             const products = await Product.find({ $or: [{ productType: "default" }, { addedByUser: decodedToken.userId }] }, '-_id -__v -createdAt -updatedAt');
-            console.log(products);
+            // console.log(products);
             console.log("==========================================");
 
             res.locals.products = products;

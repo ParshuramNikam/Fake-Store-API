@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon server.js",
     "build": "next build",
-    "build:tailwindcss": "npx tailwindcss -i ./styles/tailwind.css -o ./styles/tailwind.css --watch",
-    "heroku-postbuild": "npm install && npm run build",
+    "build:tailwindcss": "npx tailwindcss -i ./styles/tailwind-input.css -o ./styles/tailwind-output.css --watch",
+    "heroku-postbuild": "npm install && npm run build",  
     "start": "node server.js"
   },
   "engines": {

@@ -33,7 +33,7 @@ router.get('/auth/forget-password/', sendOtpForForgetPassword, (req,res)=> {
 	console.log("aaa");
 })
 
-router.post('/auth/change-password/:userId/:otp',changeUserPassword , (req,res)=> {
+router.post('/auth/changePassword/:userId/:otp',changeUserPassword , (req,res)=> {
 	res.send(req.params)
 })
 

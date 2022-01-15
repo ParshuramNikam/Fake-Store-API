@@ -15,7 +15,7 @@ const sendOtpForForgetPassword = async (req,res,next) => {
 
         await User.findByIdAndUpdate(user._id, {otp: userOTP, otpTimeStamp: new Date()});
 
-        sendMailToUser(email, 'change-password', `${process.env.APP_URL}/user/change-password/${userOTP}/${user.userId}`);
+        sendMailToUser(email, 'change-password', `${process.env.APP_URL}/user/changePassword/${userOTP}/${user.userId}`);
         res.status(200).send({status:"success", message:"Email sent to you!"})
     } catch (error) {
         console.log(error);

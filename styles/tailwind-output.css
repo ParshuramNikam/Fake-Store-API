@@ -40,7 +40,7 @@ html {
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
-  tab-size: 4;
+     tab-size: 4;
   /* 3 */
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
@@ -79,7 +79,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 /*
@@ -948,7 +948,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-x-5 {
   -moz-column-gap: 1.25rem;
-  column-gap: 1.25rem;
+       column-gap: 1.25rem;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
@@ -1452,7 +1452,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .underline {
   -webkit-text-decoration-line: underline;
-  text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .antialiased {
@@ -1500,6 +1500,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -1718,7 +1720,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:gap-x-8 {
     -moz-column-gap: 2rem;
-    column-gap: 2rem;
+         column-gap: 2rem;
   }
 
   .md\:overflow-x-hidden {

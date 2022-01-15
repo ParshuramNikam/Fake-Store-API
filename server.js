@@ -76,7 +76,7 @@ app.prepare().then(() => {
 		res.send(req.headers.authorization)
 	});
 
-	// ================== imp 👇 ======================
+	// ================== 👇 Remaining all request handled by nextJS 👇 ======================
 
 	server.all('*', (req, res) => {
 		return handle(req, res);
