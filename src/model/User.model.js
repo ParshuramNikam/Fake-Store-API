@@ -31,7 +31,7 @@ const userSchema = mongoose.Schema({
         default: 1,
     },
     otp: {
-        type: String,
+        type: String, 
         default: null,
         expires: '86400'  // 24 * 3600sec => 24 hours => 1 day 
     },

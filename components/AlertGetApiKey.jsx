@@ -10,9 +10,9 @@ const AlertGetApiKey = () => {
             <div className="w-full flex items-center justify-center">
                 <div>
                     Get your API key simply, by just
-                    <Link href="/user/signup">
+                    <Link href="/user/login">
                         <a className="underline pl-2 text-red-600 font-bold">
-                            SignUp
+                            Login
                         </a>
                     </Link>
                 </div>
