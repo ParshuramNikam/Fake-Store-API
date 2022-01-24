@@ -9,6 +9,7 @@ const register = () => {
     const [showSpinner, setShowSpinner] = useState('hidden');
     const [passwordToggle, setPasswordToggle] = useState(true)
     const [disableSignup, setDisableSignup] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
 
     const notifysuccess = (message) => toast.success(message, {
         position: "top-center",
@@ -39,7 +40,7 @@ const register = () => {
 
             setShowSpinner('inline');
             setDisableSignup(true);
-            await fetch("https://fakestores.herokuapp.com/api/auth/signup",
+            await fetch("http://localhost:8000/api/auth/signup",
                 {
                     method: "POST",
                     body: JSON.stringify(reqBody),
@@ -51,12 +52,13 @@ const register = () => {
                 .then(result => {
                     console.log(result);
                     if (result.status === 'success') {
+                        setShowAlert(true);
                         setShowSpinner('hidden')
                         console.log(disableSignup);
                         console.log("notify email otp");
-
                         notifysuccess('Verification link has been sent to your Email!');
                     } else {
+                        setShowAlert(false);
                         notifyWarning(result.message);
                         setDisableSignup(false);
                         setTimeout(() => {
@@ -79,6 +81,18 @@ const register = () => {
                 <div className="flex items-center h-screen w-full  font-sans ">
                     <div className="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-lg md:mx-auto">
                         <span className="block w-full uppercase font-bold mb-4 text-indigo-600 text-2xl">Sign Up</span>
+
+                        {/* <div className="mx-2 text-center border" style={{ color: "#721c24", backgroundColor: "#f8d7da", borderColor: "#f5c6cb" }}>
+                            Email sent to you for verification!
+                        </div> */}
+
+                        {
+                            showAlert && <div className="flex items-center rounded bg-indigo-400 text-white text-sm font-bold px-4 py-3" role="alert">
+                                <svg className="fill-current text-indigo-900 w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z" /></svg>
+                                <p>Email sent to you for verification!</p>
+                            </div>
+                        }
+
                         <form className="my-8">
                             <div className="mb-6 md:w-full">
                                 <div className="text-sm font-bold text-gray-700 tracking-wide">

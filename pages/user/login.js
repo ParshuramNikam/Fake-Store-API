@@ -36,7 +36,7 @@ const login = () => {
         if (loginDetails.email.length > 0 && loginDetails.password.length > 0) {
             setShowSpinner('inline');
             setDisableLogin(true);
-            await fetch("https://fakestores.herokuapp.com/api/auth/login",
+            await fetch("http://localhost:8000/api/auth/login",
                 {
                     method: "POST",
                     body: JSON.stringify(loginDetails),

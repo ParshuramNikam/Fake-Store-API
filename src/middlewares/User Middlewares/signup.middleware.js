@@ -64,6 +64,7 @@ const signup = async (req, res, next) => {
 		})
 		await initialUser.save();
 
+		console.log(">> email sent to user : "+ email + " by me:"+ process.env.GMAIL_USER);
 		const isEmailSent = sendMailToUser(email, 'send-otp-link', `${process.env.APP_URL}/api/auth/authenticate-signup/${userId}/${userOTP}`);
 
 		if (!isEmailSent) return res.status(400).send({ status: "failed", message: "Email not sent to user!" });

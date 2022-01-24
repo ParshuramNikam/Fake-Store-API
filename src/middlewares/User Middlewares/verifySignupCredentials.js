@@ -67,7 +67,11 @@ const verifySignupCredentials = async (req, res, next) => {
         res.locals.user = updatedUser;
         res.locals.token = signedToken;
 
-        sendMailToUser(isAlreadyRegistered.email, 'sign-up');
+        const isEmailSentSucessfully = sendMailToUser(isAlreadyRegistered.email, 'sign-up');
+
+        if(!isEmailSentSucessfully){
+            return res.status(400).send({status:"failed", message:"Email not sent to user!"})
+        }
 
         next();
 
