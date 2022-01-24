@@ -11,6 +11,7 @@ const getSingleUser = require("../../middlewares/User Middlewares/getSingleUser.
 const verifySignupCredentials = require("../../middlewares/User Middlewares/verifySignupCredentials.js");
 const sendOtpForForgetPassword = require("../../middlewares/User Middlewares/sendOtpForForgetPassword.js");
 const changeUserPassword = require("../../middlewares/User Middlewares/changeUserPassword.js");
+const deleteUserAndCartFromDB  = require('../../middlewares/User Middlewares/deleteUserAndCartFromDB.js');
 
 router.use(cookieParser());
 router.use(express.json())
@@ -53,6 +54,12 @@ router.post('/auth/protected',authenticateToken, async (req,res)=>{
 router.delete('/auth/logout',logout, (req,res)=>{
 	const user = res.locals.user;
 	return res.status(200).json({status: "success", message: "Logout Succesful! & Token deleted.", user: user});
+})
+
+
+// deleted user and its respective cart stored in DB
+router.delete('/user/delete/:userId',deleteUserAndCartFromDB, (req,res)=>{
+	res.status(200).json({status:"success", message: "User and cart deleted succesfully!"});
 })
 
 // ------------------------------------------------------------------------------------------

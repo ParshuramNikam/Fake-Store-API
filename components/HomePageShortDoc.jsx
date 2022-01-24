@@ -4,7 +4,7 @@ import AboutThisAPI from "./AboutThisAPI"
 import ReqResWrapper from "./ReqResWrapper"
 
 const reqData = {
-    endpoint: "/products/5",
+    endpoint: "/products/e1",
     id: "",
     note: null,
     impNote: null,
