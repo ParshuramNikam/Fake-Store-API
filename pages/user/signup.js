@@ -40,7 +40,7 @@ const register = () => {
 
             setShowSpinner('inline');
             setDisableSignup(true);
-            await fetch("https://fakestores.herokuapp.com/api/auth/signup",
+            await fetch("https://fakestores-api.herokuapp.com//api/auth/signup",
                 {
                     method: "POST",
                     body: JSON.stringify(reqBody),
