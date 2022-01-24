@@ -39,7 +39,7 @@ const ReqResWrapper = ({ heading, endpoint, id, note, impNote, reqOptions, cutOu
                 <div className="mb-5 bg-gray-200 rounded-md p-4 overflow-x-scroll md:overflow-x-hidden">
                     <div className="mb-4">
                         <>
-                            fetch(&quot;http://localhost:8000/api{endpoint}&quot;, {'{'} <br />
+                            fetch(&quot;https://fakestores.herokuapp.com/api{endpoint}&quot;, {'{'} <br />
                             <div className="ml-6">
                                 {/* {reqOptions.method.toUpperCase() !== "GET" && <>
                                     method: '{reqOptions.method.toUpperCase()}', <br />
