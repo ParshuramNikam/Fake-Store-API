@@ -40,14 +40,11 @@ app.prepare().then(() => {
 	server.use(express.json());
 	server.use(express.urlencoded({ extended: true }));
 	server.use(cookieParser());
-	server.use("http://localhost:8000/", cors(corsOptions));
-	server.use("https://fakestores.herokuapp.com/", cors(corsOptions));
+	server.use('*', cors(corsOptions));
+	// server.use("https://fakestores.herokuapp.com/", cors(corsOptions));
 	server.use(headers);
 	server.use(
-		cors({
-			origin: true, //included origin as true
-			credentials: true, //included credentials as true
-		})
+		cors(corsOptions)
 	);
 
 
@@ -63,17 +60,17 @@ app.prepare().then(() => {
 
 	// ============ ============== ============ ============== ============
 
-	server.get('/api', (req, res) => {
+	server.get('/api', cors(), (req, res) => {
 		console.log(req.headers);
 		console.log(req.cookies['test_cookie']);
 		res.send({ message: "Welcome to server", myCookies: req.cookies['test_cookie'] || "NOT found" });
 	})
 
-	server.get('/demo', (req, res) => {
+	server.get('/demo', cors(), (req, res) => {
 		res.cookie("test_cookie", "THIS IS A TEST COOKIE").send("HIIIIIIIIII");
 	})
 
-	server.post('/', (req, res) => {
+	server.post('/', cors(), (req, res) => {
 		console.log("Getting headers....");
 		console.log(req.headers['authorization']);
 		res.send(req.headers.authorization)
