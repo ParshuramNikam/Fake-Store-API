@@ -38,7 +38,8 @@ app.prepare().then(() => {
 	server.use(express.json());
 	server.use(express.urlencoded({ extended: true }));
 	server.use(cookieParser());
-	server.use("*", cors(corsOptions));
+	server.use("http://localhost:8000/", cors(corsOptions));
+	server.use("https://fakestores.herokuapp.com/", cors(corsOptions));
 	server.use(headers);
 	server.use(
 		cors({

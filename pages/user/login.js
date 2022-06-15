@@ -60,7 +60,10 @@ const login = () => {
                         setShowSpinner('hidden');
                         notifyWarning(result.message);
                     }
-                });
+                }).catch((err) => {
+                    // alert(err.message);
+                    console.log("Your refresh token may be get expired make new one 'OR' " + err);
+                })
         } else {
             setDisableLogin(false);
             notifyWarning('All fields Required!');
@@ -69,7 +72,7 @@ const login = () => {
 
     return (
         <>
-        <PageHead title={'Login | Fake Store API'}/>
+            <PageHead title={'Login | Fake Store API'} />
             {/* <MyToastContainer /> */}
             <div className="antialiased bg-indigo-50 py-3">
                 {/* <Nav /> */}
@@ -94,7 +97,7 @@ const login = () => {
                                     <div>
                                         <Link href="/user/forgetPassword">
                                             <a className="text-xs float-right font-display font-semibold text-indigo-600 hover:text-indigo-800 cursor-pointer">
-                                            Forgot Password?
+                                                Forgot Password?
                                             </a>
                                         </Link>
                                     </div>

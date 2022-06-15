@@ -65,7 +65,10 @@ const register = () => {
                             setShowSpinner('hidden');
                         }, 500);
                     }
-                });
+                }).catch((err) => {
+                    // alert(err.message);
+                    console.log("Your refresh token may be get expired make new one 'OR' "+err);
+                })
         } else {
             setDisableSignup(false);
             notifyWarning('All fields Required!')
