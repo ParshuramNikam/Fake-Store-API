@@ -25,11 +25,13 @@ const productRoutes = require("./src/routes/products/product.routes.js");
 const cartRoutes = require("./src/routes/cart/cart.routes.js");
 
 
-const corsOptions = {
-	origin: '*',
+var corsOptions = {
+	origin: true,
 	credentials: true, // required to pass
 	allowedHeaders: "Content-Type, Authorization, X-Requested-With, Access-Control-Allow-Origin",
 };
+
+
 
 app.prepare().then(() => {
 	const server = express();
