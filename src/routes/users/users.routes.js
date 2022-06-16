@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+ 
 const cookieParser = require("cookie-parser");
 const signup = require("../../middlewares/User Middlewares/signup.middleware.js");
 const login = require("../../middlewares/User Middlewares/login.middleware.js");

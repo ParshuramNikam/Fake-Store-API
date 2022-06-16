@@ -18,7 +18,7 @@ const cookieParser = require("cookie-parser");
 const cors = require('cors');
 const path = require('path');
 
-// middlwwares
+// middlwwares 
 const headers = require('./src/middlewares/headers');
 const userRoutes = require('./src/routes/users/users.routes.js')
 const productRoutes = require("./src/routes/products/product.routes.js");
@@ -40,12 +40,12 @@ app.prepare().then(() => {
 	server.use(express.json());
 	server.use(express.urlencoded({ extended: true }));
 	server.use(cookieParser());
-	server.use('*', cors(corsOptions));
+	// server.use('*', cors(corsOptions));
 	// server.use("https://fakestores.herokuapp.com/", cors(corsOptions));
 	server.use(headers);
-	server.use(
-		cors(corsOptions)
-	);
+	// server.use(
+	// 	cors(corsOptions)
+	// );
 
 
 
@@ -66,9 +66,9 @@ app.prepare().then(() => {
 		res.send({ message: "Welcome to server", myCookies: req.cookies['test_cookie'] || "NOT found" });
 	})
 
-	server.get('/demo', cors(), (req, res) => {
-		res.cookie("test_cookie", "THIS IS A TEST COOKIE").send("HIIIIIIIIII");
-	})
+	// server.get('/demo', cors(), (req, res) => {
+	// 	res.cookie("test_cookie", "THIS IS A TEST COOKIE").send("HIIIIIIIIII");
+	// })
 
 	server.post('/', cors(), (req, res) => {
 		console.log("Getting headers....");
