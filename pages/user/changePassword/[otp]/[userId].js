@@ -58,7 +58,7 @@ const changePassword = () => {
         }
 
         // console.log(newPassword.trim().toLowerCase());
-        fetch(`/api/auth/changePassword/${userIdOtp.userId}/${userIdOtp.otp}`, {
+        fetch(`https://fakestores.herokuapp.com/api/auth/changePassword/${userIdOtp.userId}/${userIdOtp.otp}`, {
             credentials: 'include',
             method: "POST", // added this part
             headers: {

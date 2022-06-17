@@ -30,7 +30,7 @@ const Dashboard = () => {
 	}
 
 	const getUserDetails = async () => {
-		await fetch('/api/auth/protected', {
+		await fetch('https://fakestores.herokuapp.com/api/auth/protected', {
 			credentials: "include",
 			method: "POST",
 		}).then((res) => res.json())
@@ -47,7 +47,7 @@ const Dashboard = () => {
 
 	const getCartDetails = async () => {
 		console.log(token);
-		await fetch(`/api/carts/by/cookie`, {
+		await fetch(`https://fakestores.herokuapp.com/api/carts/by/cookie`, {
 			method: "GET",
 			credentials: "include"
 		}).then((res) => res.json())
@@ -62,7 +62,7 @@ const Dashboard = () => {
 
 	const getUserAddedProducts = async () => {
 		console.log(token);
-		await fetch('/api/products/by/cookie', {
+		await fetch('https://fakestores.herokuapp.com/api/products/by/cookie', {
 			method: "GET",
 			credentials: "include"
 		}).then((res) => res.json())

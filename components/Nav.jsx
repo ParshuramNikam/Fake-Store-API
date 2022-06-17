@@ -41,7 +41,7 @@ function Nav() {
 
     const logoutHandler = async () => {
         setDisable(true);
-        await fetch('/api/auth/logout',
+        await fetch('https://fakestores.herokuapp.com/api/auth/logout',
             {
                 method: "DELETE",
                 credentials: "include", // added this part

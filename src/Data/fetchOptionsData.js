@@ -674,7 +674,7 @@ const cartData = [
 const userData = [
     {
         heading: "User Sign Up",
-        endpoint: "/auth/signup",
+        endpoint: "/account/signup",
         id: "u-signup",
         note: null,
         impNot: null,
@@ -690,15 +690,22 @@ const userData = [
             },
         },
         cutOutput: false,
-        lastNote: "Email will sent to the user's emailID with verification Link. After clicking on that link user will get verified! and now user can login with email and password.",
+        lastNote: "This will be dummy success response. User with these credentials will not be added. ",
         output: {
             "status": "success",
-            "message": "Email is sent to user. Check your Email and verify your credentials!"
+            "user": {
+                "userId": "test-user-8642",
+                "password": "test",
+                "email": "test@test.com",
+                "apiKey": "b3efbc4b-f835-4909-ae67-223e9d96d626",
+                "cart": "test-user-8642"
+            },
+            "message": "User registred scuccesfully!"
         },
     },
     {
         heading: "User Log In",
-        endpoint: "/auth/login",
+        endpoint: "/account/login",
         id: "u-login",
         note: null,
         impNote: null,
@@ -714,20 +721,21 @@ const userData = [
             }
         },
         cutOutput: false,
+        lastNote: "This will be dummy success response.",
         output: {
             "status": "success",
-            "message": "login success",
             "user": {
-                "userId": "test-user",
+                "userId": "test-user-8642",
                 "email": "test@test.com",
                 "apiKey": "b3efbc4b-f835-4909-ae67-223e9d96d626",
-                "cart": "61a7150c8d9973a5cd30fbee"
-            }
+                "cart": "test-user-8642"
+            },
+            "message": "User logged in scuccesfully!"
         },
     },
     {
         heading: "User Logout",
-        endpoint: "/auth/logout",
+        endpoint: "/account/logout",
         id: "u-logout",
         note: null,
         impNote: null,
@@ -743,19 +751,13 @@ const userData = [
             },
         },
         cutOutput: false,
+        lastNote: "This will be dummy success response.",
         output: {
             "status": "success",
-            "message": "Logout Succesful! & Token deleted.",
+            "message": "User logout scuccesfully!",
             "user": {
-                "userId": "TDmQZU",
+                "userId": "test-user-8642",
                 "email": "test@test.com",
-                "apiKey": "d0cd5940-1f0f-468b-9d6d-71bca235e62e",
-                "cart": {
-                    "cartId": "test-user",
-                    "userId": "test-user",
-                    "cartType": "userAdded",
-                    "cartProducts": [],
-                }
             }
         },
     },

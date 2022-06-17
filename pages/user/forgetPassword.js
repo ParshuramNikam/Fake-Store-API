@@ -38,7 +38,7 @@ const forgetPassord = () => {
         }
         // setDisable('HHHHHH')
         console.log(email.trim().toLowerCase());
-        fetch(`/api/auth/forget-password?email=${email.trim().toLowerCase()}`, {
+        fetch(`https://fakestores.herokuapp.com/api/auth/forget-password?email=${email.trim().toLowerCase()}`, {
             credentials: 'include',
             method: "GET", // added this part
             headers: {
