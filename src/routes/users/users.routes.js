@@ -70,7 +70,7 @@ router.post('/auth/login', (req, res) => {
 	});
 })
 
-router.post('/account/login', (Req, res) => {
+router.post('/account/login', (req, res) => {
 	let { password, email } = req.body;
 	email = email.toLowerCase().trim();
 	password = password.trimRight();
