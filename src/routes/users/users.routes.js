@@ -62,7 +62,7 @@ router.post('/auth/changePassword/:userId/:otp', changeUserPassword, (req, res) 
 	res.send(req.params)
 })
 
-router.post('/auth/login', login, (req, res) => {
+router.post('/auth/login', (req, res) => {
 	res.status(200).json({
 		status: "success",
 		message: 'login success',
@@ -99,7 +99,7 @@ router.delete('/auth/logout', logout, (req, res) => {
 	return res.status(200).json({ status: "success", message: "Logout Succesful! & Token deleted.", user: user });
 })
 
-router.delete('/account/logout', (Req, res) => {
+router.delete('/account/logout', (req, res) => {
 	let { email } = req.body;
 	email = email.toLowerCase().trim();
 	// password = password.trimRight();
