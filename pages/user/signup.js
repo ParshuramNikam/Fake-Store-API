@@ -67,7 +67,8 @@ const register = () => {
                     }
                 }).catch((err) => {
                     // alert(err.message);
-                    console.log("Your refresh token may be get expired make new one 'OR' "+err);
+                    setDisableSignup(false);
+                    console.log("Your refresh token may be get expired make new one 'OR' " + err);
                 })
         } else {
             setDisableSignup(false);

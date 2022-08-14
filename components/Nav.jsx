@@ -37,14 +37,15 @@ function Nav() {
             console.log(isLoggedIn);
             setIsLoggedIn(true);
         }
-    },[])
+    }, [])
 
     const logoutHandler = async () => {
         setDisable(true);
         await fetch('https://fakestores.herokuapp.com/api/auth/logout',
             {
-                method: "DELETE",
-                credentials: "include", // added this part
+                method: "POST",
+                credentials: "include",
+                mode: 'cors',// added this part
             }).then((res) => res.json())
             .then((result) => {
                 console.log(result)
@@ -98,14 +99,6 @@ function Nav() {
                                         </div>
                                     </Link>
 
-                                    <Link href="https://github.com/ParshuramNikam">
-                                        <div className="cursor-pointer hover:bg-indigo-400 text-white block px-3 py-2 rounded-md text-base font-medium">
-                                            <a className="">
-                                                Github
-                                            </a>
-                                        </div>
-                                    </Link>
-
                                     {
                                         isLoggedIn
                                             ? <>
@@ -116,12 +109,12 @@ function Nav() {
                                                         </a>
                                                     </div>
                                                 </Link>
-                                                <button className={`w-full cursor-pointer hover:bg-indigo-400 text-white block px-3 py-2 rounded-md text-base font-medium ${disable ? "cursor-not-allowed" : ""}`}
+                                                {/* <button className={`w-full cursor-pointer hover:bg-indigo-400 text-white block px-3 py-2 rounded-md text-base font-medium ${disable ? "cursor-not-allowed" : ""}`}
                                                     onClick={() => logoutHandler()}
                                                     disabled={disable ? true : false}
                                                 >
                                                     Logout
-                                                </button>
+                                                </button> */}
                                             </>
                                             : <div className="hover:bg-indigo-400 text-white block px-3 py-2 rounded-md text-base font-medium">
                                                 <Link href="/user/login">
@@ -131,6 +124,14 @@ function Nav() {
                                                 </Link>
                                             </div>
                                     }
+
+                                    <Link href="https://github.com/ParshuramNikam">
+                                        <div className="cursor-pointer hover:bg-indigo-400 text-white block px-3 py-2 rounded-md text-base font-medium">
+                                            <a className="">
+                                                Github
+                                            </a>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -185,14 +186,6 @@ function Nav() {
                                     </div>
                                 </Link>
 
-                                <Link href="https://github.com/ParshuramNikam">
-                                    <div className="cursor-pointer hover:bg-indigo-400 text-white block px-3 py-2 rounded-md text-base font-medium">
-                                        <a className="">
-                                            Github
-                                        </a>
-                                    </div>
-                                </Link>
-
                                 {/* ===================================== */}
 
                                 {
@@ -205,11 +198,11 @@ function Nav() {
                                                     </a>
                                                 </div>
                                             </Link>
-                                            <button className="w-full cursor-pointer hover:bg-indigo-400 text-white block px-3 py-2 rounded-md text-base font-medium"
+                                            {/* <button className="w-full cursor-pointer hover:bg-indigo-400 text-white block px-3 py-2 rounded-md text-base font-medium"
                                                 onClick={() => logoutHandler()}
                                             >
                                                 Logout
-                                            </button>
+                                            </button> */}
                                         </>
                                         : <div className="hover:bg-indigo-400 text-white block px-3 py-2 rounded-md text-base font-medium">
                                             <Link href="/user/login">
@@ -221,6 +214,14 @@ function Nav() {
 
 
                                 }
+
+                                <Link href="https://github.com/ParshuramNikam">
+                                    <div className="cursor-pointer hover:bg-indigo-400 text-white block px-3 py-2 rounded-md text-base font-medium">
+                                        <a className="">
+                                            Github
+                                        </a>
+                                    </div>
+                                </Link>
 
                             </div>
                         </div>

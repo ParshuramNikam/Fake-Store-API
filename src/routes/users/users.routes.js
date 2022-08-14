@@ -62,7 +62,7 @@ router.post('/auth/changePassword/:userId/:otp', changeUserPassword, (req, res) 
 	res.send(req.params)
 })
 
-router.post('/auth/login', (req, res) => {
+router.post('/auth/login', login, (req, res) => {
 	res.status(200).json({
 		status: "success",
 		message: 'login success',
@@ -94,7 +94,7 @@ router.post('/auth/protected', authenticateToken, async (req, res) => {
 	return res.status(302).json({ status: "success", apiKey: user.apiKey, user: user, message: "User is verified!" })
 })
 
-router.delete('/auth/logout', logout, (req, res) => {
+router.post('/auth/logout', logout, (req, res) => {
 	const user = res.locals.user;
 	return res.status(200).json({ status: "success", message: "Logout Succesful! & Token deleted.", user: user });
 })

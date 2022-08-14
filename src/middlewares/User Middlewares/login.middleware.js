@@ -12,10 +12,11 @@ const login = async (req, res, next) => {
 		let { password, secretKey } = req.body;
 		password = password.trimRight();
 		let email = req.body.email.toLowerCase().trim();
- 
+
+		console.log(req.body.email);
 		if (!email || !password) return res.status(400).send({ status: "failed", message: "Email and Password is Required!" });
 
-		const user = await User.findOne({ email });
+		const user = await User.findOne({ email: email });
 		console.log(user);
 		if (!user) return res.status(200).send({ message: "User Not Exits" });
 
@@ -33,8 +34,11 @@ const login = async (req, res, next) => {
 
 		// create a signed Token for the user. 
 		const signedToken = await generateToken(user.userId, user.role);
+
+        console.log("🚀 ~ file: login.middleware.js ~ line 36 ~ login ~ signed̥Token", signedToken)
 		
 		// save token in cookies 
+		
 		await res.cookie("access_token", signedToken, {
 			// expire duration:- 1 month = 31days * 24 hours * 1hour
 			expires: new Date(Date.now() + 31*24*3600000) // 3600000 millisec = 1 hour -> cookie will be removed after 1 months

@@ -49,27 +49,19 @@ const changePasswordTemplate = (link) => {
 	`
 }
 
-const oAuth2Client = new google.auth.OAuth2(process.env.GOOGLE_API_CLIENT_ID, process.env.GOOGLE_API_CLIENT_SECRET, process.env.GOOGLE_API_REDIRECT_URI);
-oAuth2Client.setCredentials({refresh_token: process.env.GOOGLE_API_REFRESH_TOKEN});
-
 const sendMailToUser = async (receiverEmail, subject, link) => {
 	try {
 
-		let emailContent;
-		
-		const accessToken = await oAuth2Client.getAccessToken();
+		console.log("Sending EMail to user...");
 
-		const mailTransporter = nodemailer.createTransport({
+		let emailContent;
+		console.log( process.env.GMAIL_USER, "	", process.env.GMAIL_PASSWORD);
+		
+		const mailTransporter = await nodemailer.createTransport({
 			service: 'gmail',
 			auth: {
-				type: 'OAuth2',
-				user: 'fakestoresapi@gmail.com',
-				clientId: process.env.GOOGLE_API_CLIENT_ID,
-				clientSecret: process.env.GOOGLE_API_CLIENT_SECRET,
-				refreshToken: process.env.GOOGLE_API_REFRESH_TOKEN,
-				accessToken: accessToken,
-				// user: process.env.GMAIL_USER,
-				// pass: process.env.GMAIL_PASSWORD,
+				user: process.env.GMAIL_USER,
+				pass: process.env.GMAIL_PASSWORD,
 			}
 		});
 
@@ -97,7 +89,7 @@ const sendMailToUser = async (receiverEmail, subject, link) => {
 			html: emailContent
 		}
 
-		mailTransporter.sendMail(mailDetails, function (err, data) {
+		await mailTransporter.sendMail(mailDetails, function (err, data) {
 			if (err) {
 				console.log("Error ocurred in mailTransporter.sendMail function :- "+ err.message);
 				console.log('Error Occurs');
@@ -108,6 +100,8 @@ const sendMailToUser = async (receiverEmail, subject, link) => {
 				return true;
 			}
 		});
+
+		console.log("Email sent sucesfully!");
 
 		return true;
 
